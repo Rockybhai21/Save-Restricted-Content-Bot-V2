@@ -51,7 +51,7 @@ collection = db[COLLECTION_NAME]
 
 if STRING:
     from devgagan import pro
-    print("App imported from devgagan.")
+    print("App imported from @Real_Pirates.")
 else:
     pro = None
     print("STRING is not available. 'app' is set to None.")
@@ -101,7 +101,7 @@ async def upload_media(sender, target_chat_id, file, caption, edit, topic_id):
                     reply_to_message_id=topic_id,
                     parse_mode=ParseMode.MARKDOWN,
                     progress=progress_bar,
-                    progress_args=("╭─────────────────────╮\n│      **__Pyro Uploader__**\n├─────────────────────", edit, time.time())
+                    progress_args=("╭────────────────────╮\n│      **__Pirates Uploader__**\n├────────────────────", edit, time.time())
                 )
                 await dm.copy(LOG_GROUP)
                 
@@ -113,7 +113,7 @@ async def upload_media(sender, target_chat_id, file, caption, edit, topic_id):
                     parse_mode=ParseMode.MARKDOWN,
                     progress=progress_bar,
                     reply_to_message_id=topic_id,
-                    progress_args=("╭─────────────────────╮\n│      **__Pyro Uploader__**\n├─────────────────────", edit, time.time())
+                    progress_args=("╭────────────────────╮\n│      **__Pirates Uploader__**\n├────────────────────", edit, time.time())
                 )
                 await dm.copy(LOG_GROUP)
             else:
@@ -125,7 +125,7 @@ async def upload_media(sender, target_chat_id, file, caption, edit, topic_id):
                     reply_to_message_id=topic_id,
                     progress=progress_bar,
                     parse_mode=ParseMode.MARKDOWN,
-                    progress_args=("╭─────────────────────╮\n│      **__Pyro Uploader__**\n├─────────────────────", edit, time.time())
+                    progress_args=("╭────────────────────╮\n│      **__Pirates Uploader__**\n├────────────────────", edit, time.time())
                 )
                 await asyncio.sleep(2)
                 await dm.copy(LOG_GROUP)
@@ -200,7 +200,7 @@ async def get_msg(userbot, sender, edit_id, msg_link, i, message):
             if chat in saved_channel_ids:
                 await app.edit_message_text(
                     message.chat.id, edit_id,
-                    "Sorry! This channel is protected by **__Team SPY__**."
+                    "Sorry! This channel is protected by **__@Real_Pirates__**."
                 )
                 return
             
@@ -267,7 +267,7 @@ async def get_msg(userbot, sender, edit_id, msg_link, i, message):
             msg,
             file_name=file_name,
             progress=progress_bar,
-            progress_args=("╭─────────────────────╮\n│      **__Downloading__...**\n├─────────────────────", edit, time.time())
+            progress_args=("╭────────────────────╮\n│      **__Downloading__...**\n├────────────────────", edit, time.time())
         )
         
         caption = await get_final_caption(msg, sender)
@@ -431,7 +431,7 @@ async def copy_message_with_chat_id(app, userbot, sender, chat_id, message_id, e
             file = await userbot.download_media(
                 msg,
                 progress=progress_bar,
-                progress_args=("╭─────────────────────╮\n│      **__Downloading__...**\n├─────────────────────", edit, time.time())
+                progress_args=("╭────────────────────╮\n│      **__Downloading__...**\n├────────────────────", edit, time.time())
             )
             file = await rename_file(file, sender)
 
@@ -579,7 +579,7 @@ async def send_settings_message(chat_id, user_id):
         [Button.inline("Set Thumbnail", b'setthumb'), Button.inline("Remove Thumbnail", b'remthumb')],
         [Button.inline("PDF Wtmrk", b'pdfwt'), Button.inline("Video Wtmrk", b'watermark')],
         [Button.inline("Upload Method", b'uploadmethod')],  # Include the dynamic Fast DL button
-        [Button.url("Report Errors", "https://t.me/team_spy_pro")]
+        [Button.url("Report Errors", "https://t.me/Movie_Pirates_x")]
     ]
 
     await gf.send_file(
@@ -633,7 +633,7 @@ async def callback_query_handler(event):
         await event.respond('Please send the photo you want to set as the thumbnail.')
     
     elif event.data == b'pdfwt':
-        await event.respond("Watermark is Pro+ Plan.. contact @kingofpatal")
+        await event.respond("Watermark is Pro+ Plan.. contact Admin Here @Movie_Pirates_x ")
         return
 
     elif event.data == b'uploadmethod':
@@ -646,7 +646,7 @@ async def callback_query_handler(event):
         # Display the buttons for selecting the upload method
         buttons = [
             [Button.inline(f"Pyrogram v2{pyrogram_check}", b'pyrogram')],
-            [Button.inline(f"SpyLib v1 ⚡{telethon_check}", b'telethon')]
+            [Button.inline(f"Real_Pirates ⚡{telethon_check}", b'telethon')]
         ]
         await event.edit("Choose your preferred upload method:\n\n__**Note:** **SpyLib ⚡**, built on Telethon(base), by Team SPY still in beta.__", buttons=buttons)
 
@@ -656,7 +656,7 @@ async def callback_query_handler(event):
 
     elif event.data == b'telethon':
         save_user_upload_method(user_id, "Telethon")
-        await event.edit("Upload method set to **SpyLib ⚡\n\nThanks for choosing this library as it will help me to analyze the error raise issues on github.** ✅")        
+        await event.edit("Upload method set to **Real_Pirates ⚡\n\nThanks for choosing this Method.** 🏴‍☠️")        
         
     elif event.data == b'reset':
         try:
@@ -666,8 +666,8 @@ async def callback_query_handler(event):
                 {"_id": user_id},
                 {"$unset": {
                     "delete_words": "",
-                    "replacement_words": "",
-                    "watermark_text": "",
+                    "replacement_words": "@Real_Pirates",
+                    "watermark_text": "@Real_PirateX",
                     "duration_limit": ""
                 }}
             )
@@ -676,8 +676,8 @@ async def callback_query_handler(event):
                 {"user_id": user_id},
                 {"$unset": {
                     "delete_words": "",
-                    "replacement_words": "",
-                    "watermark_text": "",
+                    "replacement_words": "@Real_Pirates",
+                    "watermark_text": "@Real_PirateX",
                     "duration_limit": ""
                 }}
             )            
@@ -831,7 +831,7 @@ async def handle_large_file(file, sender, edit, caption):
                 duration=duration,
                 progress=progress_bar,
                 progress_args=(
-                    "╭─────────────────────╮\n│       **__4GB Uploader__ ⚡**\n├─────────────────────",
+                    "╭────────────────────╮\n│       **__4GB Uploader__ ⚡**\n├────────────────────",
                     edit,
                     time.time()
                 )
@@ -845,7 +845,7 @@ async def handle_large_file(file, sender, edit, caption):
                 thumb=thumb_path,
                 progress=progress_bar,
                 progress_args=(
-                    "╭─────────────────────╮\n│      **__4GB Uploader ⚡__**\n├─────────────────────",
+                    "╭────────────────────╮\n│      **__4GB Uploader ⚡__**\n├────────────────────",
                     edit,
                     time.time()
                 )
@@ -857,7 +857,7 @@ async def handle_large_file(file, sender, edit, caption):
         if freecheck == 1:
             reply_markup = InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton("💎 Get Premium to Forward", url="https://t.me/kingofpatal")]
+                    [InlineKeyboardButton("💎 Get Premium to Forward", url="https://t.me/Movie_Pirates_x")]
                 ]
             )
             await app.copy_message(
@@ -909,7 +909,7 @@ async def rename_file(file, sender):
         file_extension = 'mp4'
         
     for word in delete_words:
-        original_file_name = original_file_name.replace(word, "")
+        original_file_name = original_file_name.replace(word, "@Real_Pirates")
 
     for word, replace_word in replacements.items():
         original_file_name = original_file_name.replace(word, replace_word)
@@ -981,16 +981,16 @@ def progress_callback(done, total, user_id):
     
     # Format the final output as needed
     final = (
-        f"╭──────────────────╮\n"
-        f"│     **__SpyLib ⚡ Uploader__**       \n"
+        f"╭─────────────────╮\n"
+        f"│     **__@Real_Pirates ⚡ Uploader__**       \n"
         f"├──────────\n"
         f"│ {progress_bar}\n\n"
         f"│ **__Progress:__** {percent:.2f}%\n"
         f"│ **__Done:__** {done_mb:.2f} MB / {total_mb:.2f} MB\n"
         f"│ **__Speed:__** {speed_mbps:.2f} Mbps\n"
         f"│ **__ETA:__** {remaining_time_min:.2f} min\n"
-        f"╰──────────────────╯\n\n"
-        f"**__Powered by Team SPY__**"
+        f"╰─────────────────╯\n\n"
+        f"**__Powered by @Real_PirateX__**"
     )
     
     # Update tracking variables for the user
@@ -1044,16 +1044,16 @@ def dl_progress_callback(done, total, user_id):
     
     # Format the final output as needed
     final = (
-        f"╭──────────────────╮\n"
-        f"│     **__SpyLib ⚡ Downloader__**       \n"
+        f"╭─────────────────╮\n"
+        f"│     **__@Real_Pirates ⚡ Downloader__**       \n"
         f"├──────────\n"
         f"│ {progress_bar}\n\n"
         f"│ **__Progress:__** {percent:.2f}%\n"
         f"│ **__Done:__** {done_mb:.2f} MB / {total_mb:.2f} MB\n"
         f"│ **__Speed:__** {speed_mbps:.2f} Mbps\n"
         f"│ **__ETA:__** {remaining_time_min:.2f} min\n"
-        f"╰──────────────────╯\n\n"
-        f"**__Powered by Team SPY__**"
+        f"╰─────────────────╯\n\n"
+        f"**__Powered by @Real_PirateX__**"
     )
     
     # Update tracking variables for the user
